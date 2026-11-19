@@ -32,6 +32,7 @@ physics_plugin = { workspace = true }
 portals_plugin = { workspace = true }
 post_plugin = { workspace = true }
 render_bps_plugin = { workspace = true, optional = true }
+rust_plugin = { workspace = true, optional = true }
 sky_plugin = { workspace = true }
 splines_plugin = { workspace = true }
 sprites_plugin = { workspace = true }
@@ -72,6 +73,7 @@ editor = [
     "portals_plugin/editor",
     "post_plugin/editor",
     "dep:render_bps_plugin",
+    "dep:rust_plugin",
     "sky_plugin/editor",
     "splines_plugin/editor",
     "sprites_plugin/editor",
@@ -111,6 +113,8 @@ glam = { workspace = true }
 serde_json = { workspace = true }
 tempfile = { workspace = true }
 image = { workspace = true }
+# The skinned frames (tests/skinned_frames.rs): a procedural rig.
+skeletal_assets = { workspace = true }
 # The level editor as the editor assembles it (tests/level_editor.rs): the
 # shell with every installed plugin's root registering through its
 # extension points.
@@ -141,6 +145,12 @@ pulsar_reflection = { workspace = true }
 pulsar_script_vm = { workspace = true }
 pulsar_std = { workspace = true }
 pulsar_class = { workspace = true }
+# The language tests (tests/languages.rs): the registry the host routes through.
+pulsar_language = { workspace = true }
+# The language-server service the Rust tests drive (tests/languages.rs).
+pulsar_lsp = { workspace = true }
+ui = { workspace = true }
+pulsar-config = { workspace = true }
 ui_common = { workspace = true }
 gpui-ce = { workspace = true, features = ["test-support"] }
 tracing = { workspace = true }
@@ -151,7 +161,6 @@ helio-vg-format = { workspace = true }
 helio-pass-buffer-view = { workspace = true }
 helio-pass-water-sim = { workspace = true }
 helio-pass-portal-cull = { workspace = true }
-helio-pass-gi = { workspace = true }
 helio-pass-foliage-place = { workspace = true }
 blueprint_compiler = { path = "../vendor/blueprint_editor/compiler" }
 graphy-blueprint = { workspace = true }
